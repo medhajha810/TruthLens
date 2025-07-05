@@ -101,25 +101,28 @@ const StoryMode = ({ onClose }) => {
   const [autoPlay, setAutoPlay] = useState(true);
   const [speechSupported, setSpeechSupported] = useState(false);
   const [arrowPosition, setArrowPosition] = useState(null);
-  const [hasStarted, setHasStarted] = useState(false);
+  const [dialogPosition, setDialogPosition] = useState('bottom-center');
   const speechRef = useRef(null);
 
-  // Check if speech synthesis is supported and start speaking immediately
+  // Check if speech synthesis is supported
   useEffect(() => {
     const supported = 'speechSynthesis' in window;
     setSpeechSupported(supported);
     if (!supported) {
       setSpeechEnabled(false);
       setAutoPlay(false);
-    } else {
-      // Start speaking immediately when component mounts
-      setHasStarted(true);
-      // Start speaking right away with a minimal delay
-      setTimeout(() => {
-        speakText(STORY_STEPS[0].speech);
-      }, 100);
     }
   }, []);
+
+  // Start speaking immediately when component mounts
+  useEffect(() => {
+    if (speechSupported && speechEnabled && autoPlay) {
+      // Start speaking immediately
+      setTimeout(() => {
+        speakText(STORY_STEPS[0].speech);
+      }, 300);
+    }
+  }, [speechSupported, speechEnabled, autoPlay]);
 
   const handleNext = () => setStep((s) => Math.min(s + 1, STORY_STEPS.length - 1));
   const handleBack = () => setStep((s) => Math.max(s - 1, 0));
@@ -231,10 +234,91 @@ const StoryMode = ({ onClose }) => {
     }
   };
 
-  // Handle element highlighting and arrow positioning
+  // Get dialog position and style based on current step
+  const getDialogPosition = (currentStep) => {
+    const positions = [
+      'bottom-center', // Welcome
+      'top-center',    // Mission statement
+      'bottom-left',   // Statistics
+      'top-right',     // Navigation
+      'center',        // Dynamic theming
+      'bottom-right',  // Accessibility panel
+      'bottom-left',   // Voice navigation
+      'top-left',      // Keyboard navigation
+      'center-right',  // Screen reader
+      'top-center',    // Text-to-speech
+      'bottom-center', // News aggregation
+      'top-left',      // Analysis tools
+      'center-left',   // Fact checking
+      'bottom-right',  // Social sentiment
+      'center'         // Conclusion
+    ];
+    
+    return positions[currentStep] || 'bottom-center';
+  };
+
+  // Get dialog style based on position
+  const getDialogStyle = (position) => {
+    const baseClasses = "relative bg-white dark:bg-slate-900 rounded-2xl shadow-2xl p-6 border-4 border-blue-400 dark:border-yellow-400 flex items-start gap-4";
+    
+    switch (position) {
+      case 'top-center':
+        return `${baseClasses} max-w-lg`;
+      case 'top-left':
+        return `${baseClasses} max-w-md`;
+      case 'top-right':
+        return `${baseClasses} max-w-sm`;
+      case 'center':
+        return `${baseClasses} max-w-xl`;
+      case 'center-left':
+        return `${baseClasses} max-w-lg`;
+      case 'center-right':
+        return `${baseClasses} max-w-md`;
+      case 'bottom-left':
+        return `${baseClasses} max-w-sm`;
+      case 'bottom-center':
+        return `${baseClasses} max-w-lg`;
+      case 'bottom-right':
+        return `${baseClasses} max-w-md`;
+      default:
+        return `${baseClasses} max-w-lg`;
+    }
+  };
+
+  // Get container style based on position
+  const getContainerStyle = (position) => {
+    switch (position) {
+      case 'top-center':
+        return "fixed inset-0 z-50 flex items-start justify-center pointer-events-none pt-8";
+      case 'top-left':
+        return "fixed inset-0 z-50 flex items-start justify-start pointer-events-none pt-8 pl-8";
+      case 'top-right':
+        return "fixed inset-0 z-50 flex items-start justify-end pointer-events-none pt-8 pr-8";
+      case 'center':
+        return "fixed inset-0 z-50 flex items-center justify-center pointer-events-none";
+      case 'center-left':
+        return "fixed inset-0 z-50 flex items-center justify-start pointer-events-none pl-8";
+      case 'center-right':
+        return "fixed inset-0 z-50 flex items-center justify-end pointer-events-none pr-8";
+      case 'bottom-left':
+        return "fixed inset-0 z-50 flex items-end justify-start pointer-events-none pb-8 pl-8";
+      case 'bottom-center':
+        return "fixed inset-0 z-50 flex items-end justify-center pointer-events-none pb-8";
+      case 'bottom-right':
+        return "fixed inset-0 z-50 flex items-end justify-end pointer-events-none pb-8 pr-8";
+      default:
+        return "fixed inset-0 z-50 flex items-end justify-center pointer-events-none pb-8";
+    }
+  };
+
+  // Handle element highlighting, arrow positioning, and dialog positioning
   useEffect(() => {
     const highlight = STORY_STEPS[step].highlight;
     const arrowTarget = STORY_STEPS[step].arrowTarget;
+    
+    // Update dialog position
+    const newPosition = getDialogPosition(step);
+    setDialogPosition(newPosition);
     
     if (highlight) {
       const el = document.querySelector(highlight);
@@ -251,24 +335,12 @@ const StoryMode = ({ onClose }) => {
     updateArrowPosition(arrowTarget);
   }, [step]);
 
-  // Auto-speak when step changes (but not on initial mount)
+  // Auto-speak when step changes
   useEffect(() => {
-    if (hasStarted && speechEnabled && autoPlay && step > 0) {
+    if (speechEnabled && autoPlay && step > 0) {
       speakText(STORY_STEPS[step].speech);
     }
-  }, [step, speechEnabled, autoPlay, hasStarted]);
-
-  // Start speaking immediately when component opens
-  useEffect(() => {
-    if (speechSupported && speechEnabled && autoPlay) {
-      // Small delay to ensure voices are loaded
-      const timer = setTimeout(() => {
-        speakText(STORY_STEPS[0].speech);
-      }, 200);
-      
-      return () => clearTimeout(timer);
-    }
-  }, [speechSupported, speechEnabled, autoPlay]);
+  }, [step, speechEnabled, autoPlay]);
 
   // Cleanup speech on unmount
   useEffect(() => {
@@ -303,7 +375,7 @@ const StoryMode = ({ onClose }) => {
   }, [isSpeaking]);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center pointer-events-none">
+    <div className={getContainerStyle(dialogPosition)}>
       {/* Animated Arrow */}
       {arrowPosition && (
         <div 
@@ -329,8 +401,8 @@ const StoryMode = ({ onClose }) => {
         </div>
       )}
 
-      <div className="mb-8 max-w-lg w-full flex flex-col items-center pointer-events-auto">
-        <div className="relative bg-white dark:bg-slate-900 rounded-2xl shadow-2xl p-6 border-4 border-blue-400 dark:border-yellow-400 flex items-start gap-4">
+      <div className="pointer-events-auto">
+        <div className={getDialogStyle(dialogPosition)}>
           {/* Character Avatar */}
           <div className="flex-shrink-0">
             <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-4xl shadow-lg">
