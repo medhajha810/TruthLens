@@ -1,0 +1,442 @@
+/* Accessibility Styles */
+
+/* Font Size Adjustments */
+:root {
+  --accessibility-font-size: 16px;
+}
+
+/* High Contrast Mode - Fixed Implementation */
+body.high-contrast-mode {
+  --text-color: #ffff00 !important;
+  --background-color: #000000 !important;
+  --border-color: #ffff00 !important;
+  --link-color: #00ffff !important;
+  --visited-color: #ff00ff !important;
+  --focus-color: #ffff00 !important;
+  --button-bg: #000000 !important;
+  --button-text: #ffff00 !important;
+  --card-bg: #000000 !important;
+  --card-border: #ffff00 !important;
+}
+
+body.high-contrast-mode * {
+  color: var(--text-color) !important;
+  background-color: var(--background-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+body.high-contrast-mode a {
+  color: var(--link-color) !important;
+  text-decoration: underline !important;
+}
+
+body.high-contrast-mode a:visited {
+  color: var(--visited-color) !important;
+}
+
+body.high-contrast-mode *:focus {
+  outline: 3px solid var(--focus-color) !important;
+  outline-offset: 2px !important;
+}
+
+body.high-contrast-mode button,
+body.high-contrast-mode .btn-primary,
+body.high-contrast-mode .btn-outline {
+  background-color: var(--button-bg) !important;
+  color: var(--button-text) !important;
+  border: 2px solid var(--border-color) !important;
+}
+
+body.high-contrast-mode .bg-white,
+body.high-contrast-mode .bg-gray-50,
+body.high-contrast-mode .bg-gray-100,
+body.high-contrast-mode .bg-blue-600,
+body.high-contrast-mode .bg-blue-500,
+body.high-contrast-mode .bg-primary,
+body.high-contrast-mode .bg-secondary,
+body.high-contrast-mode .bg-accent {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+body.high-contrast-mode .text-white,
+body.high-contrast-mode .text-gray-900,
+body.high-contrast-mode .text-blue-600,
+body.high-contrast-mode .text-primary,
+body.high-contrast-mode .text-secondary,
+body.high-contrast-mode .text-accent {
+  color: var(--text-color) !important;
+}
+
+/* Colorblind Mode - Fixed Implementation */
+body.colorblind-mode {
+  /* Deuteranopia (red-green color blindness) */
+  --primary-color: #0066cc !important;
+  --secondary-color: #ff6600 !important;
+  --accent-color: #9900cc !important;
+  --text-color: #333333 !important;
+  --background-color: #ffffff !important;
+  --surface-color: #f8f9fa !important;
+  --error-color: #cc0000 !important;
+  --warning-color: #ff9900 !important;
+  --success-color: #006600 !important;
+  --info-color: #0066cc !important;
+}
+
+body.colorblind-mode.deuteranopia {
+  --primary-color: #0066cc !important;
+  --secondary-color: #ff6600 !important;
+  --accent-color: #9900cc !important;
+}
+
+body.colorblind-mode.protanopia {
+  --primary-color: #0066cc !important;
+  --secondary-color: #ff6600 !important;
+  --accent-color: #9900cc !important;
+}
+
+body.colorblind-mode.tritanopia {
+  --primary-color: #cc6600 !important;
+  --secondary-color: #0066cc !important;
+  --accent-color: #cc0066 !important;
+}
+
+body.colorblind-mode.achromatopsia {
+  --primary-color: #666666 !important;
+  --secondary-color: #999999 !important;
+  --accent-color: #333333 !important;
+}
+
+/* Apply colorblind colors to common elements */
+body.colorblind-mode .bg-blue-600,
+body.colorblind-mode .bg-blue-500,
+body.colorblind-mode .bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+body.colorblind-mode .bg-green-600,
+body.colorblind-mode .bg-green-500,
+body.colorblind-mode .bg-secondary {
+  background-color: var(--secondary-color) !important;
+}
+
+body.colorblind-mode .bg-purple-600,
+body.colorblind-mode .bg-purple-500,
+body.colorblind-mode .bg-accent {
+  background-color: var(--accent-color) !important;
+}
+
+body.colorblind-mode .text-blue-600,
+body.colorblind-mode .text-blue-500,
+body.colorblind-mode .text-primary {
+  color: var(--primary-color) !important;
+}
+
+body.colorblind-mode .text-green-600,
+body.colorblind-mode .text-green-500,
+body.colorblind-mode .text-secondary {
+  color: var(--secondary-color) !important;
+}
+
+body.colorblind-mode .text-purple-600,
+body.colorblind-mode .text-purple-500,
+body.colorblind-mode .text-accent {
+  color: var(--accent-color) !important;
+}
+
+body.colorblind-mode .border-blue-600,
+body.colorblind-mode .border-blue-500,
+body.colorblind-mode .border-primary {
+  border-color: var(--primary-color) !important;
+}
+
+body.colorblind-mode .border-green-600,
+body.colorblind-mode .border-green-500,
+body.colorblind-mode .border-secondary {
+  border-color: var(--secondary-color) !important;
+}
+
+body.colorblind-mode .border-purple-600,
+body.colorblind-mode .border-purple-500,
+body.colorblind-mode .border-accent {
+  border-color: var(--accent-color) !important;
+}
+
+body.colorblind-mode .text-white,
+body.colorblind-mode .text-gray-900 {
+  color: var(--text-color) !important;
+}
+
+body.colorblind-mode .btn-primary,
+body.colorblind-mode .btn-outline {
+  background-color: var(--primary-color) !important;
+  color: var(--text-color) !important;
+  border-color: var(--accent-color) !important;
+}
+
+body.colorblind-mode .bg-yellow-400,
+body.colorblind-mode .bg-orange-400 {
+  background-color: var(--accent-color) !important;
+}
+
+body.colorblind-mode .text-yellow-400,
+body.colorblind-mode .text-orange-400 {
+  color: var(--accent-color) !important;
+}
+
+body.colorblind-mode .bg-indigo-900,
+body.colorblind-mode .bg-purple-900,
+body.colorblind-mode .bg-gray-900 {
+  background-color: var(--background-color) !important;
+}
+
+body.colorblind-mode .text-indigo-900,
+body.colorblind-mode .text-purple-900,
+body.colorblind-mode .text-gray-900 {
+  color: var(--text-color) !important;
+}
+
+/* Font Size Adjustments */
+body {
+  font-size: var(--accessibility-font-size) !important;
+}
+
+/* Ensure all text elements scale with font size */
+h1, h2, h3, h4, h5, h6, p, span, div, button, input, textarea, select, label {
+  font-size: inherit !important;
+}
+
+/* Focus indicators for keyboard navigation */
+*:focus {
+  outline: 2px solid #3b82f6 !important;
+  outline-offset: 2px !important;
+}
+
+/* Skip to main content link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Screen reader only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast media query support */
+@media (prefers-contrast: high) {
+  :root {
+    --text-color: #000000;
+    --background-color: #ffffff;
+    --border-color: #000000;
+  }
+}
+
+/* Voice navigation indicators */
+.voice-active {
+  position: relative;
+}
+
+.voice-active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(59, 130, 246, 0.1);
+  border: 2px solid #3b82f6;
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Reading progress indicator */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #e5e7eb;
+  z-index: 1000;
+}
+
+.reading-progress-bar {
+  height: 100%;
+  background: #3b82f6;
+  transition: width 0.3s ease;
+}
+
+/* Accessibility panel animations */
+.accessibility-panel-enter {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.accessibility-panel-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 300ms ease-out, opacity 300ms ease-out;
+}
+
+.accessibility-panel-exit {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.accessibility-panel-exit-active {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 300ms ease-in, opacity 300ms ease-in;
+}
+
+/* Voice feedback animations */
+.voice-feedback {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  z-index: 1000;
+  animation: voiceFeedbackSlide 0.3s ease-out;
+}
+
+@keyframes voiceFeedbackSlide {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Listening indicator */
+.listening-indicator {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #ef4444;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1000;
+  animation: listeningPulse 2s infinite;
+}
+
+@keyframes listeningPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Keyboard navigation focus styles */
+[tabindex="-1"]:focus {
+  outline: none !important;
+}
+
+/* Live regions for screen readers */
+[aria-live="polite"],
+[aria-live="assertive"] {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Interactive element styles */
+button:not([disabled]),
+a,
+input,
+select,
+textarea {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:not([disabled]):hover,
+a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Form element focus styles */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+}
+
+/* Status message styles */
+.error {
+  color: #dc2626 !important;
+  background-color: #fef2f2 !important;
+  border: 1px solid #fecaca !important;
+}
+
+.success {
+  color: #059669 !important;
+  background-color: #f0fdf4 !important;
+  border: 1px solid #bbf7d0 !important;
+}
+
+.warning {
+  color: #d97706 !important;
+  background-color: #fffbeb !important;
+  border: 1px solid #fed7aa !important;
+}
+
+.info {
+  color: #2563eb !important;
+  background-color: #eff6ff !important;
+  border: 1px solid #bfdbfe !important;
+} 

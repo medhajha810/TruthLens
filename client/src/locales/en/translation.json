@@ -1,0 +1,328 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "refresh": "Refresh",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "reset": "Reset",
+    "confirm": "Confirm",
+    "yes": "Yes",
+    "no": "No",
+    "ok": "OK",
+    "copy": "Copy",
+    "share": "Share",
+    "download": "Download",
+    "upload": "Upload",
+    "view": "View",
+    "details": "Details",
+    "more": "More",
+    "less": "Less",
+    "all": "All",
+    "none": "None",
+    "select": "Select",
+    "choose": "Choose",
+    "enter": "Enter",
+    "type": "Type",
+    "click": "Click",
+    "hover": "Hover",
+    "drag": "Drag",
+    "drop": "Drop"
+  },
+  "navigation": {
+    "home": "Home",
+    "news": "News",
+    "analysis": "Analysis",
+    "factCheck": "Fact Check",
+    "social": "Social",
+    "about": "About",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Register",
+    "dashboard": "Dashboard",
+    "notifications": "Notifications",
+    "search": "Search",
+    "menu": "Menu"
+  },
+  "home": {
+    "hero": {
+      "title": "See Through the",
+      "titleHighlight": "Noise",
+      "subtitle": "TruthLens provides a comprehensive and transparent view of current events through multi-source aggregation, sentiment analysis, and fact-checking.",
+      "exploreNews": "Explore News",
+      "learnMore": "Learn More"
+    },
+    "stats": {
+      "articlesAnalyzed": "Articles Analyzed",
+      "sourcesMonitored": "Sources Monitored",
+      "usersServed": "Users Served",
+      "factChecks": "Fact Checks"
+    },
+    "features": {
+      "title": "Powerful Features for News Analysis",
+      "subtitle": "Our comprehensive toolkit helps you navigate the complex landscape of modern news media",
+      "multiSource": {
+        "title": "Multi-Source News Aggregation",
+        "description": "Collects news from multiple trusted sources to ensure balanced and diverse coverage of events."
+      },
+      "sentimentAnalysis": {
+        "title": "Sentiment & Bias Analysis",
+        "description": "Advanced algorithms assess article tone and highlight potential biases in news outlets."
+      },
+      "socialIntegration": {
+        "title": "Social Media Integration",
+        "description": "Analyzes public sentiment from platforms like Twitter and Reddit for real-time reactions."
+      },
+      "factChecking": {
+        "title": "Fact-Checking Integration",
+        "description": "Cross-references articles with reputable fact-checking organizations to verify claims."
+      }
+    },
+    "benefits": {
+      "title": "Why Choose TruthLens?",
+      "subtitle": "Empowering users with tools to navigate the complex world of news and information",
+      "combatMisinformation": {
+        "title": "Combat Misinformation",
+        "description": "Identify and flag potentially false or misleading information"
+      },
+      "promoteMediaLiteracy": {
+        "title": "Promote Media Literacy",
+        "description": "Help users develop critical thinking skills for news consumption"
+      },
+      "realTimeAnalysis": {
+        "title": "Real-time Analysis",
+        "description": "Get instant insights into news credibility and bias"
+      },
+      "trustedSources": {
+        "title": "Trusted Sources",
+        "description": "Access verified information from reputable fact-checking organizations"
+      }
+    },
+    "liveStats": {
+      "title": "Live Platform Statistics",
+      "subtitle": "Real-time insights into our platform's impact and usage",
+      "activeUsers": "Active Users",
+      "articlesProcessed": "Articles Processed",
+      "factChecksCompleted": "Fact Checks Completed",
+      "biasAlerts": "Bias Alerts"
+    }
+  },
+  "news": {
+    "title": "News Aggregation",
+    "subtitle": "Multi-source news collection with advanced filtering and analysis",
+    "trending": "Trending Topics",
+    "latest": "Latest News",
+    "categories": {
+      "general": "General",
+      "business": "Business",
+      "technology": "Technology",
+      "sports": "Sports",
+      "entertainment": "Entertainment",
+      "health": "Health",
+      "science": "Science",
+      "politics": "Politics"
+    },
+    "filters": {
+      "sortBy": "Sort by",
+      "publishedAt": "Published Date",
+      "relevance": "Relevance",
+      "popularity": "Popularity",
+      "source": "Source",
+      "dateRange": "Date Range",
+      "today": "Today",
+      "week": "This Week",
+      "month": "This Month",
+      "year": "This Year"
+    },
+    "article": {
+      "readMore": "Read More",
+      "source": "Source",
+      "published": "Published",
+      "author": "Author",
+      "share": "Share",
+      "bookmark": "Bookmark",
+      "biasScore": "Bias Score",
+      "credibility": "Credibility",
+      "sentiment": "Sentiment",
+      "positive": "Positive",
+      "negative": "Negative",
+      "neutral": "Neutral"
+    }
+  },
+  "analysis": {
+    "title": "Sentiment Analysis",
+    "subtitle": "Advanced text analysis and bias detection",
+    "textAnalysis": "Text Analysis",
+    "articleAnalysis": "Article Analysis",
+    "biasDetection": "Bias Detection",
+    "sentimentAnalysis": "Sentiment Analysis",
+    "credibilityScore": "Credibility Score",
+    "inputPlaceholder": "Enter text to analyze...",
+    "analyzeButton": "Analyze",
+    "results": {
+      "title": "Analysis Results",
+      "sentiment": "Sentiment",
+      "confidence": "Confidence",
+      "bias": "Bias Level",
+      "credibility": "Credibility",
+      "keywords": "Key Topics",
+      "summary": "Summary"
+    },
+    "comparison": {
+      "title": "Article Comparison",
+      "selectArticles": "Select articles to compare",
+      "compare": "Compare",
+      "similarities": "Similarities",
+      "differences": "Differences"
+    }
+  },
+  "factCheck": {
+    "title": "Fact Checking",
+    "subtitle": "Verify claims and check facts against trusted sources",
+    "claimVerification": "Claim Verification",
+    "articleAnalysis": "Article Analysis",
+    "trendingChecks": "Trending Fact-Checks",
+    "inputPlaceholder": "Enter a claim to verify...",
+    "analyzeArticle": "Analyze Article",
+    "verifyClaim": "Verify Claim",
+    "results": {
+      "title": "Fact-Check Results",
+      "verdict": "Verdict",
+      "confidence": "Confidence",
+      "explanation": "Explanation",
+      "sources": "Sources",
+      "relatedClaims": "Related Claims"
+    },
+    "verdicts": {
+      "true": "True",
+      "false": "False",
+      "halfTrue": "Half True",
+      "mostlyTrue": "Mostly True",
+      "mostlyFalse": "Mostly False",
+      "unverified": "Unverified",
+      "misleading": "Misleading"
+    }
+  },
+  "social": {
+    "title": "Social Sentiment",
+    "subtitle": "Real-time social media sentiment analysis",
+    "trendingTopics": "Trending Topics",
+    "sentimentAnalysis": "Sentiment Analysis",
+    "platforms": {
+      "twitter": "Twitter",
+      "reddit": "Reddit",
+      "facebook": "Facebook",
+      "instagram": "Instagram"
+    },
+    "sentiment": {
+      "positive": "Positive",
+      "negative": "Negative",
+      "neutral": "Neutral",
+      "mixed": "Mixed"
+    },
+    "metrics": {
+      "mentions": "Mentions",
+      "engagement": "Engagement",
+      "reach": "Reach",
+      "sentiment": "Sentiment"
+    }
+  },
+  "about": {
+    "title": "About TruthLens",
+    "subtitle": "Our mission to promote media literacy and combat misinformation",
+    "mission": {
+      "title": "Our Mission",
+      "description": "TruthLens is dedicated to promoting media literacy, combatting misinformation, and empowering users to critically evaluate news coverage from multiple perspectives."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "A world where everyone has access to reliable, transparent, and diverse news sources that promote informed decision-making and democratic discourse."
+    },
+    "values": {
+      "title": "Our Values",
+      "transparency": "Transparency",
+      "accuracy": "Accuracy",
+      "diversity": "Diversity",
+      "accessibility": "Accessibility",
+      "innovation": "Innovation"
+    },
+    "team": {
+      "title": "Our Team",
+      "description": "A diverse group of journalists, technologists, and researchers committed to truth and transparency."
+    }
+  },
+  "footer": {
+    "description": "A multi-perspective news analyzer designed to promote media literacy, combat misinformation, and empower users to critically evaluate news coverage.",
+    "features": "Features",
+    "support": "Support",
+    "newsAggregation": "News Aggregation",
+    "sentimentAnalysis": "Sentiment Analysis",
+    "factChecking": "Fact Checking",
+    "socialSentiment": "Social Sentiment",
+    "aboutUs": "About Us",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "contact": "Contact",
+    "copyright": "© 2024 TruthLens. All rights reserved. Built with ❤️ for media literacy."
+  },
+  "language": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "pt": "Português",
+    "ru": "Русский",
+    "zh": "中文",
+    "ja": "日本語",
+    "ar": "العربية",
+    "selectLanguage": "Select Language",
+    "currentLanguage": "Current Language"
+  },
+  "errors": {
+    "general": "Something went wrong. Please try again.",
+    "network": "Network error. Please check your connection.",
+    "notFound": "Page not found.",
+    "unauthorized": "You are not authorized to access this resource.",
+    "forbidden": "Access forbidden.",
+    "serverError": "Server error. Please try again later.",
+    "timeout": "Request timeout. Please try again.",
+    "invalidInput": "Invalid input. Please check your data."
+  },
+  "notifications": {
+    "factCheckCompleted": "Fact-check completed",
+    "factCheckCompletedMessage": "Your submitted claim has been verified",
+    "biasDetected": "Bias detected",
+    "biasDetectedMessage": "High bias detected in trending article",
+    "newFeature": "New feature available",
+    "newFeatureMessage": "Social sentiment analysis is now live"
+  },
+  "dynamicTheme": {
+    "morning": "Morning Sky",
+    "day": "Day Sky",
+    "evening": "Evening Sky",
+    "night": "Night Sky",
+    "sunny": "Sunny Weather",
+    "rainy": "Rainy Weather",
+    "cloudy": "Cloudy Weather",
+    "positive": "Positive News",
+    "negative": "Negative News",
+    "breaking": "Breaking News"
+  },
+  "hello": "Hello",
+  "welcome": "Welcome to TruthLens!"
+} 

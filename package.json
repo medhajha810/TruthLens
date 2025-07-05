@@ -1,0 +1,50 @@
+{
+  "name": "truthlens",
+  "version": "1.0.0",
+  "description": "A Multi-Perspective News Analyzer with sentiment analysis, bias detection, and fact-checking",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server/index.js",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "install-all": "npm install && cd client && npm install",
+    "start": "node server/index.js"
+  },
+  "keywords": [
+    "news",
+    "analysis",
+    "sentiment",
+    "bias",
+    "fact-checking",
+    "media-literacy"
+  ],
+  "author": "Georgian-86",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "axios": "^1.6.0",
+    "node-cron": "^3.0.3",
+    "compression": "^1.7.4",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.1.5",
+    "morgan": "^1.10.0",
+    "socket.io": "^4.7.4",
+    "natural": "^6.10.4",
+    "compromise": "^14.10.0",
+    "sentiment": "^5.0.2",
+    "cheerio": "^1.0.0-rc.12",
+    "node-cache": "^5.1.2",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.32.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+} 
